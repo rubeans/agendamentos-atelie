@@ -9,6 +9,14 @@ const app = express()
 //database connection
 connectDB()
 
+//declare routers
+const loginRouter = require('./routes/login')
+const homeRouter = require('./routes/home')
+
+//use routers
+app.use('/', loginRouter)
+app.use('/home', homeRouter)
+
 // store session
 const store = new MongoDBSession({
     uri: process.env.DB_URI,
@@ -19,7 +27,11 @@ const store = new MongoDBSession({
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
+
+//use static files
 app.use(express.static(path.join(__dirname, 'public')));
+
+//session storage
 app.use((
     session({
         secret: "key that will sign cookie",
@@ -28,23 +40,6 @@ app.use((
         store: store
     })
 ))
-
-app.get('/', (req, res) => {
-    res.render('login')
-})
-
-app.post('/', (req, res) => {
-    if (req.body.admin === process.env.admin && req.body.password === process.env.password) {
-        req.session.isTrue
-        res.redirect('/home')
-    } else {
-        res.redirect('/')
-    }
-})
-
-app.get('/home', (req, res) => {
-    res.render('home')
-})
 
 app.listen('3000', () => {
     console.log('running on http://localhost:3000')
