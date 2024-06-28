@@ -3,8 +3,12 @@ const bcrypt = require('bcrypt')
 
 const AdminSchema = new mongoose.Schema(
     {
-        name: String,
-        password: String
+        username: {
+            type: String
+        },
+        password: {
+            type: String
+        }
     },
     {
         versionKey: false

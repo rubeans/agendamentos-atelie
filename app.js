@@ -13,10 +13,6 @@ connectDB()
 const loginRouter = require('./routes/login')
 const homeRouter = require('./routes/home')
 
-//use routers
-app.use('/', loginRouter)
-app.use('/home', homeRouter)
-
 // store session
 const store = new MongoDBSession({
     uri: process.env.DB_URI,
@@ -30,6 +26,10 @@ app.use(express.urlencoded({ extended: false }));
 
 //use static files
 app.use(express.static(path.join(__dirname, 'public')));
+
+//use routers
+app.use('/', loginRouter)
+app.use('/home', homeRouter)
 
 //session storage
 app.use((
