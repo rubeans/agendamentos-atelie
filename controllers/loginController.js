@@ -5,7 +5,6 @@ exports.renderLoginPage = (req, res) => {
     res.render('login')
 }
 
-
 exports.verifyUserAfterLogin = async (req, res) => {
     // req.session.isTrue
     run().catch(e => console.error(e))
@@ -13,13 +12,21 @@ exports.verifyUserAfterLogin = async (req, res) => {
         try {
             const { username, password } = req.body
             const admin = await Admin.findOne({ username: username })
-            const passwordMatches = await bcrypt.compare(password, admin.password)
-            if (admin.username == process.env.admin && passwordMatches) {
-                return res.redirect('/home')
-            } else {
-                console.log('User or password is not correct!')
-                return res.redirect('/')
+            if (!admin) {
+                console.log('Credentials are not valid');
+                res.render('login')
+                return
             }
+            const passwordMatches = bcrypt.compare(password, admin.password)
+            passwordMatches.then((data) => {
+                if (!data) {
+                    res.render('login')
+                    console.log('Credentials are not valid');
+                } else {
+                    req.session.isAuth = true
+                    res.redirect('/home')
+                }
+            })
         } catch (e) {
             console.error(e)
         }
