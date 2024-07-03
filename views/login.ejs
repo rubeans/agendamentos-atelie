@@ -1,7 +1,10 @@
 <%- include('layout/top') %>
-<form action="/" method="post">
-  <label for="username">Admin<input type="text" id="username" name="username" required></label>
-  <label for="password">Senha<input type="password" id="password" name="password" required></label>
-  <button>Entrar</button>
-</form>
+<div class="login-container">
+  <h1>Entrar com as Credencias</h1>
+  <form action="/" method="post">
+    <label for="username">Admin<input type="text" id="username" name="username" required></label>
+    <label for="password">Senha<input type="password" id="password" name="password" required></label>
+    <button>Entrar</button>
+  </form>
+</div>
 <%- include('layout/bottom') %>

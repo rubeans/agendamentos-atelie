@@ -6,10 +6,10 @@ const MongoDBSession = require('connect-mongodb-session')(session)
 const connectDB = require('./db-connection')
 const app = express()
 
-//database connection
+// database connection
 connectDB()
 
-//declare routers
+// declare routers
 const loginRouter = require('./routes/login')
 const homeRouter = require('./routes/home')
 
@@ -18,8 +18,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 
-//use static files
-app.use(express.static(path.join(__dirname, 'public')));
+// use static files
+app.use(express.static(__dirname + '/public'));
 
 // store session
 const store = new MongoDBSession({
@@ -27,7 +27,7 @@ const store = new MongoDBSession({
     collection: 'sessions'
 })
 
-//session storage
+// session storage
 app.use(
     session({
         secret: "key that will sign cookie",
@@ -37,10 +37,11 @@ app.use(
     })
 )
 
-//use routers
+// use routers
 app.use('/', loginRouter)
 app.use('/', homeRouter)
 
+// run server
 app.listen('3000', () => {
     console.log('running on http://localhost:3000')
 })

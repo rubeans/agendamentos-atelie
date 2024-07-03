@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* LOGIN PAGE */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
