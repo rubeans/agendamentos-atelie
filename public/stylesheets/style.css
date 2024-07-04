@@ -3,8 +3,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    height: 100vh;
-    width: 100vw;
+    background-color: #FFC8C8;
 }
 
 /* LOGIN PAGE */
@@ -12,4 +11,44 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.login-header {
+    color: #FF3FA4;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.login-input {
+    font-size: 1.5rem;
+    padding: 8px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #FF9B82;
+    color: #FF3FA4;
+}
+
+.login-input::placeholder {
+    color: #FFC8C8;
+}
+
+.login-btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 2px solid #FF9B82;
+    background-color: #FF3FA4;
+    color: #FFC8C8;
 }

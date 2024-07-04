@@ -1,10 +1,11 @@
 <%- include('layout/top') %>
+
 <div class="login-container">
-  <h1>Entrar com as Credencias</h1>
-  <form action="/" method="post">
-    <label for="username">Admin<input type="text" id="username" name="username" required></label>
-    <label for="password">Senha<input type="password" id="password" name="password" required></label>
-    <button>Entrar</button>
+  <h1 class="login-header">Entre com as credencias</h1>
+  <form class="login-form" action="/" method="post">
+    <input class="login-input" type="text" name="username" placeholder="Admin" required autofocus autocomplete="off">
+    <input class="login-input" type="password" id="password" name="password" placeholder="Senha" required>
+    <button class="login-btn">Entrar</button>
   </form>
 </div>
 <%- include('layout/bottom') %>
