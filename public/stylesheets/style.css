@@ -34,7 +34,8 @@ body {
     width: 100%;
     outline: none;
     border-radius: 5px;
-    border: 2px solid #FF9B82;
+    border: 2px solid #FF3FA4;
+    background-color: #FF9B82;
     color: #FF3FA4;
 }
 
@@ -52,3 +53,5 @@ body {
     background-color: #FF3FA4;
     color: #FFC8C8;
 }
+
+/* HOME PAGE */
