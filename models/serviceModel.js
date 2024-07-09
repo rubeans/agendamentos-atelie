@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const ScheduleSchema = mongoose.Schema(
+const ServiceSchema = mongoose.Schema(
     {
         clientName: {
             type: String
@@ -20,4 +20,4 @@ const ScheduleSchema = mongoose.Schema(
     }
 )
 
-module.exports = mongoose.Model('Schedule', ScheduleSchema)
+module.exports = mongoose.model('Service', ServiceSchema)

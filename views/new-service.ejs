@@ -1,0 +1,7 @@
+<%- include('layout/top') %>
+<form action="/new-service" method="post">
+  <input type="text" name="clientName" placeholder="Nome do Cliente">
+  <input type="date" name="date">
+  <input type="number" name="price" placeholder="Preço" min="0" max="1000">
+</form>
+<%- include('layout/bottom') %>
