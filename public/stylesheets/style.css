@@ -3,7 +3,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    background-color: #f8dede;
+    background-color: #fdecec;
 }
 
 button {
@@ -26,7 +26,6 @@ header {
     height: 19vh;
     width: 10vw;
     border-radius: 20px;
-    margin-top: 2vh;
 }
 
 /* LOGIN PAGE */
@@ -60,7 +59,6 @@ header {
     border: 2px solid #FF3FA4;
     background-color: #FF9B82;
     color: #FF3FA4;
-    font-weight: bold;
 }
 
 .login-input::placeholder {
@@ -75,7 +73,32 @@ header {
     border: 2px solid #FF9B82;
     background-color: #FF3FA4;
     color: #FFC8C8;
-    font-weight: bold;
 }
 
 /* HOME PAGE */
+
+.home-container {
+    display: grid;
+    grid-template-areas:
+        'sidebar main main main'
+        'sidebar main main main'
+        'sidebar main main main';
+    height: 80vh;
+    width: 100vw;
+}
+
+.home-sidebar {
+    grid-area: sidebar;
+    width: 20vw;
+}
+
+.home-main {
+    grid-area: main;
+    width: 80vw;
+}
+
+.service-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}

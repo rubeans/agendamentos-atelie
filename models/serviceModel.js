@@ -10,9 +10,6 @@ const ServiceSchema = mongoose.Schema(
         },
         price: {
             type: Number
-        },
-        status: {
-            type: Boolean
         }
     },
     {

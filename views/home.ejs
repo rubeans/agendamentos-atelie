@@ -1,10 +1,27 @@
 <%- include('layout/top') %>
-<aside class="sidebar">
-  <a href="/new-service"><button>Novo Agendamento</button></a>
-  <a href="/logout"><button>Sair</button></a>
-</aside>
+<div class="home-container">
+  <aside class="home-sidebar">
+    <a href="/new-service"><button>Novo Agendamento</button></a>
+    <a href="/logout"><button>Sair</button></a>
+  </aside>
 
-<main class="home-main">
-    
-</main>
+  <main class="home-main">
+    <div class="service-container">
+      <table id="services">
+        <tr>
+          <th>Cliente</th>
+          <th>Data e Horário</th>
+          <th>Preço</th>
+        </tr>
+        <% services.forEach(service =>{ %>
+        <tr>
+          <th><%=service.clientName%></th>
+          <th><%=service.date%></th>
+          <th><%=service.date%></th>
+        </tr>
+        <% }) %>
+      </table>
+    </div>
+  </main>
+</div>
 <%- include('layout/bottom') %>
