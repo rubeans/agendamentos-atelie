@@ -1,7 +1,10 @@
 <%- include('layout/top') %>
-<form action="/new-service" method="post">
-  <input type="text" name="clientName" placeholder="Nome do Cliente">
-  <input type="date" name="date">
-  <input type="number" name="price" placeholder="Preço" min="0" max="1000">
-</form>
+<div class="newServiceContainer">
+  <form class="newServiceForm" action="/new-service" method="post">
+    <input class="newServiceInput" type="text" name="clientName" placeholder="Nome do Cliente" required>
+    <input class="newServiceInput date-input" type="date" name="date" required>
+    <input class="newServiceInput" type="number" name="price" placeholder="Preço" min="0" max="1000" required>
+    <button class="newService-btn" type="submit">Adicionar</button>
+  </form>
+</div>
 <%- include('layout/bottom') %>

@@ -8,3 +8,10 @@ exports.renderHomePage = async (req, res) => {
 exports.renderNewServicePage = (req, res) => {
     res.render('new-service')
 }
+
+exports.handleNewServicePost = async (req, res) => {
+    const { clientName, date, price } = req.body
+    const newService = { clientName, date, price }
+    await Service.create(newService)
+    res.redirect('/home')
+}

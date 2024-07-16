@@ -14,6 +14,8 @@ router.get('/home', isAuth, homeController.renderHomePage)
 
 router.get('/new-service', isAuth, homeController.renderNewServicePage)
 
+router.post('/new-service', homeController.handleNewServicePost)
+
 router.get('/logout', (req, res) => {
     req.session.destroy()
     res.redirect('/')

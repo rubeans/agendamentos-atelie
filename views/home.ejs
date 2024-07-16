@@ -7,8 +7,8 @@
 
   <main class="home-main">
     <div class="service-container">
-      <table id="services">
-        <tr>
+      <table id="services-table">
+        <tr class="top-table">
           <th>Cliente</th>
           <th>Data e Horário</th>
           <th>Preço</th>
@@ -17,7 +17,9 @@
         <tr>
           <th><%=service.clientName%></th>
           <th><%=service.date%></th>
-          <th><%=service.date%></th>
+          <th>R$<%=service.price%></th>
+          <th><a href="edit/<%=service.id%>">editar</a></th>
+          <th><a href="delete/<%=service.id%>">excluir</a></th>
         </tr>
         <% }) %>
       </table>
